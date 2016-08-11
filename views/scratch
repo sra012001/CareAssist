@@ -1,0 +1,152 @@
+ <p>Search Results <%= searchresults.length%>
+                <% if (searchresults.length> 0){
+                searchresults.forEach(function(item){ %>
+                    <%= item.businessname %>
+                <%});
+                }; %>
+            </p>
+
+
+             <article class="style2">
+            									<span class="image">
+            										<img src="images/pic01.jpg" alt=""/>
+            									</span>
+                                    <a href="ph.html">
+                                        <h2>All-Care Home Health Care</h2>
+                                                    <span>
+            										    <img src="images/star-full.jpg" alt="">
+                                                        <img src="images/star-full.jpg" alt="">
+                                                        <img src="images/star-full.jpg" alt="">
+                                                        <img src="images/star-full.jpg" alt="">
+                                                        <img src="images/star-full.jpg" alt="">
+            									    </span>
+                                        <div class="content">
+                                            <p>Book Appointment</p>
+                                        </div>
+                                    </a>
+                                </article>
+                                <article class="style3">
+            									<span class="image">
+            										<img src="images/pic01.jpg" alt=""/>
+            									</span>
+                                    <a href="ph.html">
+                                        <h2>We Care Home Health Care</h2>
+                                                    <span>
+            										    <img src="images/star-full.jpg" alt="">
+                                                        <img src="images/star-full.jpg" alt="">
+
+            									    </span>
+                                        <div class="content">
+                                            <p>Book Appointment</p>
+                                        </div>
+                                    </a>
+                                </article>
+
+
+
+  <table>
+                        <caption><h3>Book An Appointment</h3></caption>
+                        <tr>
+                            <td></td>
+
+                            <th><%= new Date(Date.now()+ (1*24*60*60*1000)).toDateString().slice(0,3)%><br>
+                                <%= new Date(Date.now()+ (1*24*60*60*1000)).toDateString().slice(4,10)%></th>
+                            <th><%= new Date(Date.now()+ (2*24*60*60*1000)).toDateString().slice(0,3)%><br>
+                                <%= new Date(Date.now()+ (2*24*60*60*1000)).toDateString().slice(4,10)%></th>
+                            <th><%= new Date(Date.now()+ (3*24*60*60*1000)).toDateString().slice(0,3)%><br>
+                                <%= new Date(Date.now()+ (3*24*60*60*1000)).toDateString().slice(4,10)%></th>
+
+                        </tr>
+                        <tr>
+                            <td>24-Hours</td>
+
+                            <td><input type="checkbox" name="serviceprovided" id="d2wd" value="Home Maintenance">
+                                <label for="d2wd"></label></td>
+                            <td><input type="checkbox" name="serviceprovided" id="d3wd" value="Home Maintenance">
+                                <label for="d3wd"></label></td>
+                            <td><input type="checkbox" name="serviceprovided" id="d4wd" value="Home Maintenance">
+                                <label for="d4wd"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Morning</td>
+
+                            <td><input type="checkbox" name="serviceprovided" id="d2m" value="Home Maintenance">
+                                <label for="d2m"></label></td>
+                            <td><input type="checkbox" name="serviceprovided" id="d3m" value="Home Maintenance">
+                                <label for="d3m"></label></td>
+                            <td><input type="checkbox" name="serviceprovided" id="d4m" value="Home Maintenance">
+                                <label for="d4m"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Afternoon</td>
+
+                            <td><input type="checkbox" name="serviceprovided" id="d2an" value="Home Maintenance">
+                                <label for="d2an"></label></td>
+                            <td><input type="checkbox" name="serviceprovided" id="d3an" value="Home Maintenance">
+                                <label for="d3an"></label></td>
+                            <td><input type="checkbox" name="serviceprovided" id="d4an" value="Home Maintenance">
+                                <label for="d4an"></label></td>
+                        </tr>
+                        <tr>
+                            <td>Evening</td>
+
+                            <td><input type="checkbox" name="serviceprovided" id="d2e" value="Home Maintenance">
+                                <label for="d2e"></label></td>
+                            <td><input type="checkbox" name="serviceprovided" id="d3e" value="Home Maintenance">
+                                <label for="d3e"></label></td>
+                            <td><input type="checkbox" name="serviceprovided" id="d4e" value="Home Maintenance">
+                                <label for="d4e"></label></td>
+                        </tr>
+                    </table>
+
+                    Early - Before 9am
+                    Morning - 9am - 12
+                    Noon - 12 - 2pm
+                    Afternoon - 2 - 5pm
+                    Evening - After 5
+                    Weekends - Sat/Sun
+
+
+                     <th> << </th>
+                                                <th><%= new Date(Date.now() + (1 * 24 * 60 * 60 * 1000)).toDateString().slice(0, 3) %><br>
+                                                    <%= new Date(Date.now() + (1 * 24 * 60 * 60 * 1000)).toDateString().slice(4, 10) %></th>
+                                                <th><%= new Date(Date.now() + (2 * 24 * 60 * 60 * 1000)).toDateString().slice(0, 3) %><br>
+                                                    <%= new Date(Date.now() + (2 * 24 * 60 * 60 * 1000)).toDateString().slice(4, 10) %></th>
+                                                <th><%= new Date(Date.now() + (3 * 24 * 60 * 60 * 1000)).toDateString().slice(0, 3) %><br>
+                                                    <%= new Date(Date.now() + (3 * 24 * 60 * 60 * 1000)).toDateString().slice(4, 10) %></th>
+                                                <th><%= new Date(Date.now() + (4 * 24 * 60 * 60 * 1000)).toDateString().slice(0, 3) %><br>
+                                                    <%= new Date(Date.now() + (4 * 24 * 60 * 60 * 1000)).toDateString().slice(4, 10) %></th>
+                                                <th><%= new Date(Date.now() + (5 * 24 * 60 * 60 * 1000)).toDateString().slice(0, 3) %><br>
+                                                    <%= new Date(Date.now() + (5 * 24 * 60 * 60 * 1000)).toDateString().slice(4, 10) %></th>
+                                                <th> >> </th>
+                                                <tr>
+                                                    <td>Before 9AM</td>
+                                                    <td><input type="checkbox" name="serviceprovided" id="d1wd" value="aa">
+                                                        <label for="d1wd" style="padding: inherit"></label>
+                                                        </td>
+                                                    <td><input type="checkbox" name="serviceprovided" id="d1wd">
+                                                        <label for="d1wd" style="padding: inherit"></label></td>
+                                                    <td><input type="checkbox" name="serviceprovided" id="d1wd">
+                                                        <label for="d1wd" style="padding: inherit"></label></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Morning 9AM - 12PM</td>
+                                                    <td><input type="checkbox" name="serviceprovided" id="d1wd" value="aa"><label for="d1wd" style="padding: inherit"></label>
+                                                    </td>
+                                                    <td><input type="checkbox" name="serviceprovided" id="d1wd" value="aa"><label for="d1wd" style="padding: inherit"></label>
+                                                    </td>
+                                                    <td><input type="checkbox" name="serviceprovided" id="d1wd" value="aa"><label for="d1wd" style="padding: inherit"></label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Noon 12PM - 2PM</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Afternoon 2PM- 5PM</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>After 5PM</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>24 Hours</td>
+                                                </tr>

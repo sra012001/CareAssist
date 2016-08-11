@@ -1,0 +1,141 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+    <title>Generic - Phantom by HTML5 UP</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <!--[if lte IE 8]>
+    <script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+    <link rel="stylesheet" href="assets/css/main.css"/>
+    <!--[if lte IE 9]>
+    <link rel="stylesheet" href="assets/css/ie9.css"/><![endif]-->
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="assets/css/ie8.css"/><![endif]-->
+</head>
+<body  onload="createDateTable(0);">
+<!-- Wrapper -->
+<div id="wrapper">
+
+    <!-- Header -->
+    <header id="header">
+        <div class="inner">
+
+            <!-- Logo -->
+            <% include Common/logo.ejs %>
+
+            <!-- Nav -->
+            <nav>
+                <ul>
+                    <li><a href="#menu">Menu</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+    <!-- Menu -->
+    <% include Common/menu.ejs %>
+
+    <!-- Main -->
+    <div id="main">
+        <div class="inner">
+            <section>
+                <h2>Appointment Details</h2>
+                <form method="post" action="/sendemail">
+                    <div class="field">
+                        <table id="appointmenttable"></table>
+                    </div>
+                    <section class="tiles" style="border: 1px solid transparent">
+                        <article style="border: 0px solid #e8e9e8; border-radius: 20px; background-color: #e8e9e8">
+                                <div>
+                                    <img id="img1" src="images/x-delete.jpg" style="height: 15px; width: 15px; float: right;
+                                cursor: pointer; cursor: hand; opacity: 0" onclick="deleteSlot(this);">
+                                    <p id="slot1" style="text-align: center; height: 60px;">Slot 1</p>
+                                    <input type="hidden" name="slot1" value=""/>
+                                </div>
+                        </article>
+                        <article style="border: 0px solid #e8e9e8; border-radius: 20px; background-color: #e8e9e8">
+                            <div>
+                                <img id="img2" src="images/x-delete.jpg" style="height: 15px; width: 15px; float: right;
+                                cursor: pointer; cursor: hand; opacity: 0" onclick="deleteSlot(this);">
+                                <p  id="slot2" style="text-align: center;height: 60px;">Slot 2</p>
+                                <input type="hidden" name="slot2"/>
+                            </div>
+                        </article>
+                        <article style="border: 0px solid #e8e9e8; border-radius: 20px; background-color: #e8e9e8">
+                            <div>
+                                <img id="img3" src="images/x-delete.jpg" style="height: 15px; width: 15px; float: right;
+                                cursor: pointer; cursor: hand; opacity: 0" onclick="deleteSlot(this);">
+                                <p id="slot3" style="text-align: center;height: 60px;">Slot 3</p>
+                                <input type="hidden" name="slot3"/>
+                            </div>
+                        </article>
+                    </section>
+                    <br>
+                    <h2>Personal Details</h2>
+                    <div class="field half first">
+                        <input type="text" name="firstname" placeholder="Enter Your First Name"/>
+                    </div>
+                    <div class="field half">
+                        <input type="text" name="lastname" placeholder="Enter Your Last Name"/>
+                    </div>
+                    <div class="field half first">
+                        <select name="receiverage">
+                            <option selected>Enter Care Receiver's Age</option>
+                            <option>1 - 10 Years Old</option>
+                            <option>10 - 20 Years Old</option>
+                            <option>20 - 40 Years Old</option>
+                            <option>40 - 65 Years Old</option>
+                            <option>65+ Years Old</option>
+                        </select>
+                    </div>
+
+                    <div class="field half">
+                        <select name="genderpref">
+                            <option selected>Enter Caregiver's Gender Preference</option>
+                            <option>Male</option>
+                            <option>Female</option>
+                            <option>Doesn't Matter</option>
+                        </select>
+                    </div>
+                    <div class="field half first">
+                        <input type="email" name="email" placeholder="Enter Your Email"/>
+                    </div>
+                    <div class="field half">
+                        <input type="text" name="phone" placeholder="Enter Your Phone Number"/>
+                    </div>
+
+                    <div class="field">
+                        <textarea maxlength="300" name="notes" placeholder="Enter Additional Comments"></textarea>
+                    </div>
+                    <div class="field">
+                        <input type="submit" value="Submit Request" class="special"/>
+                    </div>
+                    <input type="hidden" name="provideremail" value="<%= provideremail %>">
+
+                </form>
+            </section>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <% include Common/footer.ejs %>
+
+</div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/skel.min.js"></script>
+<script src="assets/js/util.js"></script>
+<!--[if lte IE 8]>
+<script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="assets/js/main.js"></script>
+<script src="assets/js/local.js"></script>
+
+</body>
+</html>

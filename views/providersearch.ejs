@@ -1,0 +1,176 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+    <title>Generic - Phantom by HTML5 UP</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <!--[if lte IE 8]>
+    <script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+    <link rel="stylesheet" href="assets/css/main.css"/>
+    <!--[if lte IE 9]>
+    <link rel="stylesheet" href="assets/css/ie9.css"/><![endif]-->
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="assets/css/ie8.css"/><![endif]-->
+    <script type="text/javascript" src="./assets/js/local.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyByS-YSGmSQMcxxt-UbRTuZQCBj_UTulnk&libraries=places&callback=initAutocomplete"
+            async defer></script>
+
+
+</head>
+<body>
+<!-- Wrapper -->
+<div id="wrapper">
+
+    <!-- Header -->
+    <header id="header">
+        <div class="inner">
+
+            <!-- Logo -->
+            <% include Common/logo.ejs %>
+
+            <!-- Nav -->
+            <nav>
+                <ul>
+                    <li><a href="#menu">Menu</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+    <!-- Menu -->
+    <% include Common/menu.ejs %>
+
+    <!-- Main -->
+    <div id="main">
+        <div class="inner">
+            <h1>Search Providers</h1>
+            <!--<span class="image main"><img src="images/pic13.jpg" alt="" /></span> -->
+
+
+            <form method="post" action="/SearchResults">
+
+                <label>Services Required</label>
+                <div class="field">
+                    <input type="checkbox" name="serviceprovided" value="Personal Hygiene" id="ph">
+                    <label for="ph">Personal Hygiene</label>
+
+                    <input type="checkbox" name="serviceprovided" id="hm" value="Home Maintenance">
+                    <label for="hm">Home Maintenance</label>
+
+                    <input type="checkbox" name="serviceprovided" id="transp" value="Transportation"><label
+                            for="transp">Transportation</label>
+
+                    <input type="checkbox" name="serviceprovided" id="meals" value="Meals"><label
+                            for="meals">Meal Delivery</label>
+
+                    <input type="checkbox" name="serviceprovided" id="cook" value="Cooking"><label
+                            for="cook">Cooking</label>
+                </div>
+                <div class="field half first">
+                    <input type="text" name="postcode" id="pcode" placeholder="Enter Your Postal Code"/>
+                    <input class="field"
+                           id="usrLat" type="hidden" name="usrLatitude">
+                    <input class="field"
+                           id="usrLng" type="hidden" name="usrLongitude">
+                </div>
+
+
+                <div class="field half">
+                    <input class="field" type="text" name="hourlyrate" id="hrate"
+                           placeholder="Enter Preferred Max Hourly Rate ($)"/>
+                </div>
+                <label>Language Preference</label>
+                <div class="field half first">
+
+                    <input type="checkbox" name="languagepref" checked="checked" disabled="disabled"
+                           value="English" id="l1">
+                    <label for="l1">English</label>
+
+                    <input type="checkbox" name="languagepref" id="l2" value="French">
+                    <label for="l2">French</label>
+
+                    <input type="checkbox" name="languagepref" id="l3" value="Cantonese"><label
+                            for="l3">Cantonese</label>
+
+                    <input type="checkbox" name="languagepref" id="l4" value="Other"><label
+                            for="l4">Others</label>
+                </div>
+                <div class = "field half">
+                    <input type="text" name="otherlang" placeholder="Enter Other Language Preference">
+                </div>
+                <ul class="actions">
+                    <li><input type="submit" value="Submit" class="special"/></li>
+                </ul>
+            </form>
+            <!-- Display Search Results -->
+            <section class="tiles">
+                <% if (searchresults.length > 0){
+                searchresults.forEach(function(item, index){ %>
+
+                <article class="style1">
+									<span class="image">
+										<img src="images/pic01.jpg" alt=""/>
+									</span>
+                    <a onclick="this.firstChild.submit();"><form type="hidden" method="post" action="/providerdetails">
+                            <input type="hidden" name="bname" value="<%= item.businessname %>">
+                            <input type="hidden" name="bdesc" value="<%= item.businessdesc %>">
+                            <input type="hidden" name="bemail" value="<%= item.email %>">
+                            <input type="hidden" name="bphone" value="<%= item.phone %>">
+                            <input type="hidden" name="baddress" value="<%= item.address.Street_Number + ',' +
+                            item.address.Street_Name + ',' + item.address.City + ',' + item.address.Province + ',' +
+                            item.address.PostalCode%>">
+                            <input type="hidden" name="bcooking" value="<%= item.servicerates.Cooking%>">
+                            <input type="hidden" name="bmeals" value="<%= item.servicerates.Meals%>">
+                            <input type="hidden" name="btransport" value="<%=  item.servicerates.Transport %>">
+                            <input type="hidden" name="bhomemaint" value="<%=  item.servicerates.HomeMaint%>">
+                            <input type="hidden" name="bpershyg" value="<%= item.servicerates.PersonalHyg%>">
+                            <input type="hidden" name="bwkhours" value="<%= item.Weekdayhours.Opens + ' to ' +
+                            item.Weekdayhours.Closes %>">
+                            <input type="hidden" name="bwehours" value="<%= item.Weekendhours.Opens + ' to ' +
+                            item.Weekendhours.Closes%>">
+
+                        </form>
+                            <h2><%= item.businessname %></h2>
+                                        <span>
+										    <img src="images/star-full.jpg" alt="">
+                                            <img src="images/star-full.jpg" alt="">
+                                            <img src="images/star-full.jpg" alt="">
+                                            <img src="images/star-full.jpg" alt="">
+									    </span>
+                            <div class="content">
+                                <p>More Details</p>
+                            </div>
+
+
+                    </a>
+                </article>
+
+                <% });
+                }; %>
+            </section>
+
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <% include Common/footer.ejs %>
+
+</div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/skel.min.js"></script>
+<script src="assets/js/util.js"></script>
+<!--[if lte IE 8]>
+<script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>

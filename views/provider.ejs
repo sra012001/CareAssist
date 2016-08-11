@@ -1,0 +1,182 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+    <title>Service Provider Portal</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+    <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+    <script type="text/javascript" src="./assets/js/local.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyByS-YSGmSQMcxxt-UbRTuZQCBj_UTulnk&libraries=places&callback=initAutocomplete"
+            async defer></script>
+
+</head>
+<body>
+<!-- Wrapper -->
+<div id="wrapper">
+
+    <!-- Header -->
+    <header id="header">
+        <div class="inner">
+
+            <!-- Logo -->
+            <% include Common/logo.ejs %>
+            <!-- Nav -->
+            <nav>
+                <ul>
+                    <li><a href="#menu">Menu</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+    <!-- Menu -->
+    <% include Common/menu.ejs %>
+    <!--<nav id="menu">-->
+        <!--<h2>Menu</h2>-->
+        <!--<ul>-->
+            <!--<li><a href="/">Home</a></li>-->
+            <!--<li><a href="generic.html">Ipsum veroeros</a></li>-->
+            <!--<li><a href="generic.html">Tempus etiam</a></li>-->
+            <!--<li><a href="generic.html">Consequat dolor</a></li>-->
+            <!--<li><a href="elements.html">Elements</a></li>-->
+        <!--</ul>-->
+    <!--</nav>-->
+
+    <!-- Main -->
+    <div id="main">
+        <div class="inner">
+            <h1>Provider Onboarding</h1>
+            <span class="image main"><img src="images/pic13.jpg" alt="" /></span>
+            <section>
+                <h2>Business Details</h2>
+                <form method="post" action="/dbConn" id="businessdetails">
+                    <div class="field">
+                        <input type="text" name="name" id="name" placeholder="Business Name" />
+                    </div>
+
+                    <div class="field">
+                        <textarea maxlength="500" name="desc" id="desc" placeholder="Describe your Business"></textarea>
+                    </div>
+                    <div class="field half first">
+                        <input type="email" name="email" id="email" placeholder="Email" />
+                    </div>
+                    <div class="field half">
+                        <input type="text" name="phone" id="phone" placeholder="Phone Number" />
+                    </div>
+
+                    <div class="field">
+                        <input id="address" name = "address" placeholder="Address"
+                               onFocus="geolocate()" type="text">
+                        <input class="field" id="street_number"
+                               disabled="true" type="hidden" name="street_number">
+                        <input class="field" id="route"
+                               disabled="true" type="hidden" name="street_name">
+                        <input class="field" id="locality"
+                        disabled="true" type="hidden" name="City">
+                        <input class="field"
+                               id="administrative_area_level_1" disabled="true" type="hidden" name="Province">
+                        <input class="field" id="postal_code"
+                               disabled="true" type="hidden" name="postal_code">
+                        <input class="field"
+                               id="country" disabled="true" type="hidden" name="country">
+                        <input class="field"
+                               id="addrLat" disabled="true" type="hidden" name="Latitude">
+                        <input class="field"
+                               id="addrLng" disabled="true" type="hidden" name="Longitude">
+
+
+                    </div>
+
+                    <div>
+                        <label>Services Provided</label>
+                        <div class="field">
+                            <input type="checkbox" name="serviceprovided" value="Personal Hygiene" id="ph" onclick="showRateTableforServices('ratediv',this,'ratetable');">
+                            <label for="ph">Personal Hygiene</label>
+
+                            <input type="checkbox" name="serviceprovided" id="hm" value="Home Maintenance" onclick="showRateTableforServices('ratediv',this,'ratetable');">
+                            <label for="hm">Home Maintenance</label>
+
+                            <input type="checkbox" name="serviceprovided" id="transp" value="Transportation" onclick="showRateTableforServices('ratediv',this,'ratetable');"><label for="transp">Transportation</label>
+
+                            <input type="checkbox" name="serviceprovided" id="meals" value="Meals" onclick="showRateTableforServices('ratediv',this,'ratetable');"><label for="meals">Meals</label>
+
+                            <input type="checkbox" name="serviceprovided" id="cook" value="Cooking" onclick="showRateTableforServices('ratediv',this,'ratetable');"><label for="cook">Cooking</label>
+                        </div>
+                        <div class="field" id="ratediv" style="display:none;">
+                            <table id="ratetable">
+                                <caption>Enter Hourly Rate</caption>
+                            </table>
+
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="field half first">
+                            <label>Weekday Business Hours</label>
+                            <div class = "field half first">
+                                <select name="wdsthours" form="businessdetails" id="wdsthour" onclick="addOpenTime(this.id);">
+                                    <option>Opens At</option>
+                                </select>
+                            </div>
+                            <div class="field half">
+                                <select name="wdenhours" form="businessdetails" id="wdenhour" onClick="addCloseTime(this.id);">
+                                    <option>Closes At</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="field half">
+                            <label>Weekend Business Hours</label>
+                            <div class = "field half first">
+                                <select name="westhours" form="businessdetails" id="westhour" onClick= "addOpenTime(this.id);">
+                                    <option>Opens At</option>
+                                </select>
+                            </div>
+                            <div class="field half">
+                                <select name="weenhours" form="businessdetails" id="weenhour" onClick="addCloseTime(this.id);">
+                                    <option>Closes At</option>
+                                </select>
+                            </div>
+                        </div>
+
+                       <!-- <div class="field">
+                            <input type="text" name="postcode" id="pcode" placeholder="Postal Code"/>
+                            <input class="field"
+                                   id="usrLat" type="hidden" name="usrLatitude">
+                            <input class="field"
+                                   id="usrLng" type="hidden" name="usrLongitude">
+                        </div> -->
+
+                    </div>
+
+                    <ul class="actions">
+                        <li><input type="submit" value="Submit" class="special" /></li>
+                    </ul>
+                </form>
+            </section>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <% include Common/footer.ejs %>
+
+</div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/skel.min.js"></script>
+<script src="assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>

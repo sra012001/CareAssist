@@ -11,15 +11,15 @@ router.post('/', function(req,res, next){
     var transporter = nodemailer.createTransport(smtpTransport({
         service: 'hotmail',
         auth: {
-            user: 'a.syedrizwan@outlook.com', // Your email id
-            pass: 'deClub60' // Your password
+            user: 'careappointment@outlook.com', // Your email id
+            pass: 'Sail2Sail' // Your password
         }
     }));
 
 
 
     var mailOptions = {
-        from: 'Rizwan Hussain <a.syedrizwan@outlook.com>', // sender address
+        from: 'Rizwan Hussain <careappointment@outlook.com>', // sender address
         to: req.body.provideremail, // list of receivers
         subject: 'Appointment Request', // Subject line
         //text: text //, // plaintext body

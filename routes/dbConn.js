@@ -16,7 +16,8 @@ module.exports = router;
 
 function insideDb(req){
     // Connection URL. This is where your mongodb server is running.
-    var url = 'mongodb://localhost:27017/CareDB';
+    //var url = 'mongodb://localhost:27017/CareDB';
+    var url = 'mongodb://syedr:deClub60@ds153745.mlab.com:53745/heroku_ks5550z8';
     // Use connect method to connect to the Server
     MongoClient.connect(url, function (err, db) {
         if (err) {

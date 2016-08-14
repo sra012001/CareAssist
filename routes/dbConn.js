@@ -8,7 +8,7 @@ var MongoClient = mongodb.MongoClient;
 router.post('/', function(req, res) {
     console.log(req.body);
     insideDb(req);
-    res.send("ho ho ho ");
+    res.send("Saved Successfully");
     //res.render('provider');
 });
 
@@ -16,8 +16,7 @@ module.exports = router;
 
 function insideDb(req){
     // Connection URL. This is where your mongodb server is running.
-    //var url = 'mongodb://localhost:27017/CareDB';
-    var url = 'mongodb://syedr:deClub60@ds153745.mlab.com:53745/heroku_ks5550z8';
+    var url = require('../app').locals.dbURL;
     // Use connect method to connect to the Server
     MongoClient.connect(url, function (err, db) {
         if (err) {
@@ -45,6 +44,38 @@ function insideDb(req){
                 type: "Point",
                 coordinates: [Number(req.body.Latitude), Number(req.body.Longitude)]
             };
+
+            console.log(typeof req.body.ph);
+
+
+            if (req.body.cook == null) {
+                req.body.cook = 0;
+            } else if(typeof req.body.cook == "string"){
+                req.body.cook = parseInt(req.body.cook);
+            }
+
+            if (req.body.meals == null){
+                req.body.meals = 0;
+            } else if(typeof req.body.meals == "string"){
+                req.body.meals = parseInt(req.body.meals);
+            }
+
+            if (req.body.transp == null){
+                req.body.transp = 0;
+            } else if(typeof req.body.transp == "string"){
+                req.body.transp = parseInt(req.body.transp);
+            }
+            if (req.body.hm == null){
+                req.body.hm = 0;
+            } else if(typeof req.body.hm == "string"){
+                req.body.hm = parseInt(req.body.hm);
+            }
+            if (req.body.ph == null){
+                req.body.ph = 0;
+            } else if(typeof req.body.ph == "string"){
+                req.body.ph = parseInt(req.body.ph);
+            }
+
 
             var rates = {
                 Cooking: req.body.cook,
@@ -88,7 +119,7 @@ function insideDb(req){
             });
 
 
-            collection.find(
+           /* collection.find(
                 {
                     location : {
                         $near : {
@@ -107,7 +138,7 @@ function insideDb(req){
                 }
             ).toArray(function(err,docs){
                 console.log('Search Results: ', docs);
-            });
+            });*/
 
             //Close connection
             // db.close();

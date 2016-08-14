@@ -12,8 +12,7 @@ router.post('/', function (req, res) {
     console.log(req.body);
     
     // Connection URL. This is where your mongodb server is running.
-    //var url = 'mongodb://localhost:27017/CareDB';
-    var url = 'mongodb://syedr:deClub60@ds153745.mlab.com:53745/heroku_ks5550z8';
+    var url = require('../app').locals.dbURL;
     // Use connect method to connect to the Server
     MongoClient.connect(url, function (err, db) {
         if (!err) {
@@ -26,7 +25,7 @@ router.post('/', function (req, res) {
 
             srchres = collection.find(
                 {
-                    
+                    /*$and: [{*/
                     location: {
                         $near: {
                             $geometry: {
@@ -36,6 +35,15 @@ router.post('/', function (req, res) {
                             $maxDistance: 5000
                         }
                     }
+                    /*,
+                    servicerates: {
+                        Cooking: {$lt : parseInt(req.body.hourlyrate)},
+                        Meals: {$lt : parseInt(req.body.hourlyrate)},
+                        Transport: {$lt : parseInt(req.body.hourlyrate)},
+                        HomeMaint: {$lt : parseInt(req.body.hourlyrate)},
+                        PersonalHyg: {$lt : parseInt(req.body.hourlyrate)}
+                    }*/
+                // }]
                 }
             );
              srchres.toArray(function (err, docs) {

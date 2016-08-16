@@ -7,6 +7,8 @@
 <html>
 <head>
     <% include Common/header.ejs %>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyByS-YSGmSQMcxxt-UbRTuZQCBj_UTulnk&libraries=places&callback=initAutocomplete"
+            async defer></script>
 </head>
 <body  onload="createDateTable(0);">
 <!-- Wrapper -->
@@ -103,6 +105,30 @@
                     </div>
                     <div class="field half">
                         <input type="text" name="phone" placeholder="Enter Your Phone Number"/>
+                    </div>
+                    <div class="field half first">
+                        <input id="address" name = "address" placeholder="Address"
+                               onFocus="geolocate()" type="text">
+                        <input class="field" id="street_number"
+                               disabled="true" type="hidden" name="street_number">
+                        <input class="field" id="route"
+                               disabled="true" type="hidden" name="street_name">
+                        <input class="field" id="locality"
+                               disabled="true" type="hidden" name="City">
+                        <input class="field"
+                               id="administrative_area_level_1" disabled="true" type="hidden" name="Province">
+                        <input class="field" id="postal_code"
+                               disabled="true" type="hidden" name="postal_code">
+                        <input class="field"
+                               id="country" disabled="true" type="hidden" name="country">
+                        <input class="field"
+                               id="addrLat" disabled="true" type="hidden" name="Latitude">
+                        <input class="field"
+                               id="addrLng" disabled="true" type="hidden" name="Longitude">
+                    </div>
+
+                    <div class="field half">
+                        <input type="text" name="some field" placeholder="some field"/>
                     </div>
 
                     <div class="field">

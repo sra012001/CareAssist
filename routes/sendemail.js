@@ -29,6 +29,7 @@ router.post('/', function(req,res, next){
             '<li>Last Name: '+ req.body.lastname +'</li>' +
         '<li>Email: '+req.body.email+'</li>' +
         '<li>Phone: '+req.body.phone+'</li>' +
+        '<li>Phone: '+req.body.address+'</li>' +
         '<li>Notes: '+req.body.notes+'</li>' +
         '<li>Slot 1: '+req.body.slot1+'</li>' +
         '<li>Slot 2: '+req.body.slot2+'</li>' +

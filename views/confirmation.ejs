@@ -30,15 +30,18 @@
     <!-- Main -->
     <div id="main">
         <div class="inner">
-            <section>
+            <header>
                 <h1>Appointment Requested</h1>
+            </header>
+            <section>
+
                 <p>Please wait for a confirmation call from the service provider. You should hear back
                     within the next 2 hours
                 </p>
             </section>
             <section>
                 <h3>Create a password and save your details</h3>
-
+                <form>
                 <div class="table-wrapper">
                     <table>
                         <%var data = elements.split(",");%>
@@ -57,11 +60,13 @@
                         </tr>
                         <tr>
                             <td>Address</td>
-                            <td>90 Dale Ave, Scarborough, M1J 3N4</td>
+                            <td><%=data[9].split(":")[1].replace(/"/g,'')+','+
+                                data[10].replace(/"/g,'')+','+
+                                data[11].replace(/"/g,'')%></td>
                         </tr>
                     </table>
                 </div>
-            <form>
+
                 <div class="field half first">
                     <input type="password" name="password" placeholder="Create Password" required />
                 </div>

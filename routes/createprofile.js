@@ -1,3 +1,6 @@
+/**
+ * Created by rizwansyed on 2016-08-16.
+ */
 var express = require('express');
 var router = express.Router();
 //lets require/import the mongodb native drivers.
@@ -7,6 +10,7 @@ var MongoClient = mongodb.MongoClient;
 
 router.post('/', function(req, res) {
     console.log(req.body);
+    var test = require('./dbConn').insideDB();
     insideDb(req);
     res.send("Saved Successfully");
     //res.render('provider');
@@ -27,7 +31,7 @@ function insideDb(req){
 
             // do some work here with the database.
             // Get the documents collection
-            var collection = db.collection('BusinessDetails');
+            var collection = db.collection('users');
 
             //Create some users
 
@@ -44,38 +48,6 @@ function insideDb(req){
                 type: "Point",
                 coordinates: [Number(req.body.Latitude), Number(req.body.Longitude)]
             };
-
-            console.log(typeof req.body.ph);
-
-
-            if (req.body.cook == null) {
-                req.body.cook = 0;
-            } else if(typeof req.body.cook == "string"){
-                req.body.cook = parseInt(req.body.cook);
-            }
-
-            if (req.body.meals == null){
-                req.body.meals = 0;
-            } else if(typeof req.body.meals == "string"){
-                req.body.meals = parseInt(req.body.meals);
-            }
-
-            if (req.body.transp == null){
-                req.body.transp = 0;
-            } else if(typeof req.body.transp == "string"){
-                req.body.transp = parseInt(req.body.transp);
-            }
-            if (req.body.hm == null){
-                req.body.hm = 0;
-            } else if(typeof req.body.hm == "string"){
-                req.body.hm = parseInt(req.body.hm);
-            }
-            if (req.body.ph == null){
-                req.body.ph = 0;
-            } else if(typeof req.body.ph == "string"){
-                req.body.ph = parseInt(req.body.ph);
-            }
-
 
             var rates = {
                 Cooking: req.body.cook,
@@ -107,7 +79,7 @@ function insideDb(req){
                 Weekendhours: wehours
             };
 
-           
+
             // Insert some users
 
             collection.insert([user1], function (err, result) {
@@ -121,5 +93,3 @@ function insideDb(req){
     });
 
 }
-
-

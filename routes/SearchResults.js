@@ -23,34 +23,42 @@ router.post('/', function (req, res) {
             // Get the documents collection
             var collection = db.collection('BusinessDetails');
 
-            srchres = collection.find(
-                {
-                    /*$and: [{*/
-                    location: {
-                        $near: {
-                            $geometry: {
-                                type: "Point",
-                                coordinates: [Number(req.body.usrLatitude), Number(req.body.usrLongitude)]
-                            },
-                            $maxDistance: 5000
-                        }
-                    }
-                    /*,
-                    servicerates: {
-                        Cooking: {$lt : parseInt(req.body.hourlyrate)},
-                        Meals: {$lt : parseInt(req.body.hourlyrate)},
-                        Transport: {$lt : parseInt(req.body.hourlyrate)},
-                        HomeMaint: {$lt : parseInt(req.body.hourlyrate)},
-                        PersonalHyg: {$lt : parseInt(req.body.hourlyrate)}
-                    }*/
-                // }]
-                }
-            );
-             srchres.toArray(function (err, docs) {
-                 res.render('providersearch',{
-                     searchresults: docs
+            srchres = collection.find({
+                    $and: [
+                        {
+                        location: {
+                            $near: {
+                                $geometry: {
+                                    type: "Point",
+                                    coordinates: [Number(req.body.usrLatitude), Number(req.body.usrLongitude)]
+                                },
+                                $maxDistance: 15000
+                            }
+                        }},
+                        {
+                            $or:
+                                [{
+                                    'servicerates.Cooking': {$lte: parseInt(req.body.hourlyrate)}},
+                                    {'servicerates.Meals': {$lte: parseInt(req.body.hourlyrate)}},
+                                    {'servicerates.Transport': {$lte: parseInt(req.body.hourlyrate)}},
+                                    {'servicerates.HomeMaint': {$lte: parseInt(req.body.hourlyrate)}},
+                                    {'servicerates.PersonalHyg': {$lte: parseInt(req.body.hourlyrate)}
+                                }]
+                        }]
+                });
+            console.log(srchres);
+
+            srchres.toArray(function (err, docs) {
+                 if (docs!= null){
+                     console.log('Search Results: ', docs);
+                     res.render('providersearch',{
+                         searchresults: docs
                  });
-             console.log('Search Results: ', docs);
+                 } else {
+                     res.render('providersearch',{
+                         searchresults: 0
+                     });
+                 }
              });
 
            /* srchres.forEach(function (myDoc) {

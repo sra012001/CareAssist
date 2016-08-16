@@ -38,15 +38,20 @@ router.post('/', function(req,res, next){
         'Thank You</p>'
     };
 
-    transporter.sendMail(mailOptions, function(error, info){
+    res.render('confirmation', {
+        elements: JSON.stringify(req.body)
+    });
+
+    /*transporter.sendMail(mailOptions, function(error, info){
         if (!error) {
             console.log('Message sent: ' + info.response);
-            res.json({yo: info.response});
+            res.render('confirmation');
+            //res.json({Success: info.response});
         } else {
             console.log(error);
-            res.json({yo: 'error'});
+            //res.json({Error: 'error'});
         };
-    });
+    });*/
 });
 
 

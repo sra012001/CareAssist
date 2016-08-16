@@ -15,13 +15,14 @@ var providersearch = require('./routes/providersearch');
 var providerdetails = require('./routes/providerdetails');
 var appointmentdetails = require('./routes/appointmentdetails');
 var sendemail = require('./routes/sendemail');
+//var confirmation =  require ('./routes/confirmation');
 
 var app = express();
 
 //Global Variables
 
-//app.locals.dbURL = 'mongodb://localhost:27017/CareDB';
-app.locals.dbURL = 'mongodb://syedr:deClub60@ds153745.mlab.com:53745/heroku_ks5550z8';
+app.locals.dbURL = 'mongodb://localhost:27017/CareDB';
+//app.locals.dbURL = 'mongodb://syedr:deClub60@ds153745.mlab.com:53745/heroku_ks5550z8';
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -45,6 +46,7 @@ app.use('/providersearch', providersearch);
 app.use('/providerdetails', providerdetails);
 app.use('/appointmentdetails', appointmentdetails);
 app.use('/sendemail', sendemail);
+//app.use('/confirmation', confirmation);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

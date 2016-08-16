@@ -6,21 +6,9 @@
 -->
 <html>
 <head>
-    <title>Generic - Phantom by HTML5 UP</title>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <!--[if lte IE 8]>
-    <script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-    <link rel="stylesheet" href="assets/css/main.css"/>
-    <!--[if lte IE 9]>
-    <link rel="stylesheet" href="assets/css/ie9.css"/><![endif]-->
-    <!--[if lte IE 8]>
-    <link rel="stylesheet" href="assets/css/ie8.css"/><![endif]-->
-    <script type="text/javascript" src="./assets/js/local.js"></script>
+    <% include Common/header.ejs %>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyByS-YSGmSQMcxxt-UbRTuZQCBj_UTulnk&libraries=places&callback=initAutocomplete"
             async defer></script>
-
-
 </head>
 <body>
 <!-- Wrapper -->
@@ -73,7 +61,8 @@
                             for="cook">Cooking</label>
                 </div>
                 <div class="field half first">
-                    <input type="text" name="postcode" id="pcode" placeholder="Enter Your Postal Code"/>
+                    <input type="text" name="postcode" id="pcode"
+                           placeholder="Enter Your Postal Code" required/>
                     <input class="field"
                            id="usrLat" type="hidden" name="usrLatitude">
                     <input class="field"
@@ -83,7 +72,7 @@
 
                 <div class="field half">
                     <input class="field" type="text" name="hourlyrate" id="hrate"
-                           placeholder="Enter Preferred Max Hourly Rate ($)"/>
+                           placeholder="Enter Preferred Max Hourly Rate ($)" required/>
                 </div>
                 <label>Language Preference</label>
                 <div class="field half first">
@@ -104,8 +93,9 @@
                 <div class = "field half">
                     <input type="text" name="otherlang" placeholder="Enter Other Language Preference">
                 </div>
-                <ul class="actions">
+                <ul class="actions" style="float: right;">
                     <li><input type="submit" value="Submit" class="special"/></li>
+                    <li><input type="reset" value="Reset" /></li>
                 </ul>
             </form>
             <!-- Display Search Results -->

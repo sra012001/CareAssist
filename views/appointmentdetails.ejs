@@ -6,16 +6,7 @@
 -->
 <html>
 <head>
-    <title>Generic - Phantom by HTML5 UP</title>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <!--[if lte IE 8]>
-    <script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-    <link rel="stylesheet" href="assets/css/main.css"/>
-    <!--[if lte IE 9]>
-    <link rel="stylesheet" href="assets/css/ie9.css"/><![endif]-->
-    <!--[if lte IE 8]>
-    <link rel="stylesheet" href="assets/css/ie8.css"/><![endif]-->
+    <% include Common/header.ejs %>
 </head>
 <body  onload="createDateTable(0);">
 <!-- Wrapper -->
@@ -47,9 +38,9 @@
             <section>
                 <h2>Appointment Details</h2>
                 <form method="post" action="/sendemail">
-                    <div class="field">
+                    <div class="table-wrapper">
                         <table id="appointmenttable"></table>
-                    </div>
+                    </div> <br>
                     <section class="tiles" style="border: 1px solid transparent">
                         <article style="border: 0px solid #e8e9e8; border-radius: 20px; background-color: #e8e9e8">
                                 <div>
@@ -85,6 +76,7 @@
                         <input type="text" name="lastname" placeholder="Enter Your Last Name"/>
                     </div>
                     <div class="field half first">
+                        <div class="select-wrapper">
                         <select name="receiverage">
                             <option selected>Enter Care Receiver's Age</option>
                             <option>1 - 10 Years Old</option>
@@ -93,15 +85,18 @@
                             <option>40 - 65 Years Old</option>
                             <option>65+ Years Old</option>
                         </select>
+                        </div>
                     </div>
 
                     <div class="field half">
+                        <div class="select-wrapper">
                         <select name="genderpref">
                             <option selected>Enter Caregiver's Gender Preference</option>
                             <option>Male</option>
                             <option>Female</option>
                             <option>Doesn't Matter</option>
                         </select>
+                            </div>
                     </div>
                     <div class="field half first">
                         <input type="email" name="email" placeholder="Enter Your Email"/>
@@ -113,9 +108,12 @@
                     <div class="field">
                         <textarea maxlength="300" name="notes" placeholder="Enter Additional Comments"></textarea>
                     </div>
-                    <div class="field">
-                        <input type="submit" value="Submit Request" class="special"/>
-                    </div>
+                    
+                        <ul class="actions" style="float: right;">
+                            <li><input type="submit" value="Submit Request" class="special" /></li>
+                            <li><input type="reset" value="Reset" /></li>
+                        </ul>
+                    
                     <input type="hidden" name="provideremail" value="<%= provideremail %>">
 
                 </form>

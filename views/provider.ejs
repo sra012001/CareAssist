@@ -6,17 +6,9 @@
 -->
 <html>
 <head>
-    <title>Service Provider Portal</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-    <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-    <script type="text/javascript" src="./assets/js/local.js"></script>
+    <% include Common/header.ejs %>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyByS-YSGmSQMcxxt-UbRTuZQCBj_UTulnk&libraries=places&callback=initAutocomplete"
             async defer></script>
-
 </head>
 <body>
 <!-- Wrapper -->
@@ -123,28 +115,36 @@
                         <div class="field half first">
                             <label>Weekday Business Hours</label>
                             <div class = "field half first">
+                                <div class="select-wrapper">
                                 <select name="wdsthours" form="businessdetails" id="wdsthour" onclick="addOpenTime(this.id);">
                                     <option>Opens At</option>
                                 </select>
+                                    </div>
                             </div>
                             <div class="field half">
+                                <div class="select-wrapper">
                                 <select name="wdenhours" form="businessdetails" id="wdenhour" onClick="addCloseTime(this.id);">
                                     <option>Closes At</option>
                                 </select>
+                                    </div>
                             </div>
                         </div>
 
                         <div class="field half">
                             <label>Weekend Business Hours</label>
                             <div class = "field half first">
+                                <div class="select-wrapper">
                                 <select name="westhours" form="businessdetails" id="westhour" onClick= "addOpenTime(this.id);">
                                     <option>Opens At</option>
                                 </select>
+                                    </div>
                             </div>
                             <div class="field half">
+                                <div class="select-wrapper">
                                 <select name="weenhours" form="businessdetails" id="weenhour" onClick="addCloseTime(this.id);">
                                     <option>Closes At</option>
                                 </select>
+                                    </div>
                             </div>
                         </div>
 

@@ -41,14 +41,17 @@
             </section>
             <section>
                 <h3>Create a password and save your details</h3>
-                <form>
+
+                <form method="post" action="/createprofile">
+
                 <div class="table-wrapper">
                     <table>
                         <%var data = elements.split(",");%>
                         <tr>
                             <td>Name</td>
                             <td><%=data[3].split(":")[1].replace(/"/g,'')+' '+
-                                data[4].split(":")[1].replace(/"/g,'')%></td>
+                                data[4].split(":")[1].replace(/"/g,'')%>
+                            </td>
                         </tr>
                         <tr>
                             <td>Email</td>
@@ -56,7 +59,9 @@
                         </tr>
                         <tr>
                             <td>Phone</td>
-                            <td><%=data[8].split(":")[1].replace(/"/g,'')%></td>
+                            <td><%=data[8].split(":")[1].replace(/"/g,'')%>
+
+                            </td>
                         </tr>
                         <tr>
                             <td>Address</td>
@@ -72,6 +77,7 @@
                 </div>
                 <div class="field half">
                     <input type="password" name="confpass" placeholder="Confirm Password" required/>
+                    <input type="hidden" name="cusid" value= <%=cusID%> />
                 </div>
                 <ul class="actions" style="float:right;">
                     <li><input type="submit" value="Create Profile" class="special" /></li>

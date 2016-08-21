@@ -7,18 +7,11 @@ var router = express.Router();
 var mongodb = require('mongodb');
 //We need to work with "MongoClient" interface in order to connect to a mongodb server.
 var MongoClient = mongodb.MongoClient;
-
+var user = require('../Models/user');
+var newuser = new user();
 router.post('/', function(req, res) {
-    console.log(req.body);
-    var test = require('./dbConn').insideDB();
-    insideDb(req);
-    res.send("Saved Successfully");
-    //res.render('provider');
-});
-
-module.exports = router;
-
-function insideDb(req){
+    //console.log(req.body)
+    //console.log();
     // Connection URL. This is where your mongodb server is running.
     var url = require('../app').locals.dbURL;
     // Use connect method to connect to the Server
@@ -26,70 +19,29 @@ function insideDb(req){
         if (err) {
             console.log('Unable to connect to the mongoDB server. Error:', err);
         } else {
-            //HURRAY!! We are connected. :)
             console.log('Connection established to', url);
 
-            // do some work here with the database.
-            // Get the documents collection
             var collection = db.collection('users');
-
-            //Create some users
-
-            var address = {
-                Street_Number: req.body.street_number,
-                Street_Name: req.body.street_name,
-                City: req.body.City,
-                Province: req.body.Province,
-                PostalCode: req.body.postal_code,
-                Country: req.body.country
-            };
-
-            var loc = {
-                type: "Point",
-                coordinates: [Number(req.body.Latitude), Number(req.body.Longitude)]
-            };
-
-            var rates = {
-                Cooking: req.body.cook,
-                Meals: req.body.meals,
-                Transport: req.body.transp,
-                HomeMaint: req.body.hm,
-                PersonalHyg: req.body.ph
-            };
-
-            var wkhours = {
-                Opens: req.body.wdsthours,
-                Closes: req.body.wdenhours
-            };
-
-            var wehours = {
-                Opens: req.body.westhours,
-                Closes: req.body.weenhours
-            };
-
-            var user1 = {
-                businessname: req.body.name,
-                businessdesc: req.body.desc,
-                email: req.body.email,
-                phone: req.body.phone,
-                address: address,
-                location: loc,
-                servicerates: rates,
-                Weekdayhours: wkhours,
-                Weekendhours: wehours
-            };
+            var ObjectID = require('mongodb').ObjectID;
 
 
-            // Insert some users
+            // Update users
 
-            collection.insert([user1], function (err, result) {
-                if (err) {
-                    console.log(err);
-                } else {
-                    console.log('Inserted %d documents into the "BusinessDetails" collection. The documents inserted with "_id" are:', result.length, result);
-                }
-            });
+            collection.updateOne({"_id": ObjectID(req.body.cusid)},
+                {$set: {"password": newuser.generateHash(req.body.password)}},
+                function (err, result) {
+                    if (err) {
+                        console.log(err);
+                    } else {
+                        console.log('Updated %d documents into the "users" collection. The documents updated with "_id" are:', result.length, result);
+                    }
+                });
         }
     });
 
-}
+    res.send("Saved Successfully");
+    //res.render('provider');
+});
+
+module.exports = router;
+

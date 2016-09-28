@@ -27,8 +27,8 @@ var app = express();
 
 //Global Variables
 
-app.locals.dbURL = 'mongodb://localhost:27017/CareDB';
-//app.locals.dbURL = 'mongodb://syedr:deClub60@ds153745.mlab.com:53745/heroku_ks5550z8';
+//app.locals.dbURL = 'mongodb://localhost:27017/CareDB';
+app.locals.dbURL = 'mongodb://syedr:deClub60@ds153745.mlab.com:53745/heroku_ks5550z8';
 
 
 // view engine setup

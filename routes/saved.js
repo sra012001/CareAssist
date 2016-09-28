@@ -81,7 +81,7 @@ router.post('/', function(req, res) {
     db.connectDB('BusinessDetails',provider, 'create', function (results) {
 
         if (results){
-            res.redirect('/thankyou')
+            res.redirect('/team')
             //res.send("Saved Successfully");
         }
         else res.send(results);

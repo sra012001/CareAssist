@@ -46,38 +46,55 @@
 
                 <div class="table-wrapper">
                     <table>
-                        <%var data = elements.split(",");%>
                         <tr>
                             <td>Name</td>
-                            <td><%=data[3].split(":")[1].replace(/"/g,'')+' '+
-                                data[4].split(":")[1].replace(/"/g,'')%>
-                            </td>
+                            <td><%=elements.FirstName+' '+elements.LastName%></td>
+                            <input type="hidden" name="FirstName" value=<%=elements.FirstName%> />
+                            <input type="hidden" name="LastName" value=<%=elements.LastName%> />
                         </tr>
                         <tr>
                             <td>Email</td>
-                            <td><%=data[7].split(":")[1].replace(/"/g,'')%></td>
+                            <td><%=elements.Email%></td>
+                            <input type="hidden" name="Email" value=<%=elements.Email%> />
                         </tr>
                         <tr>
                             <td>Phone</td>
-                            <td><%=data[8].split(":")[1].replace(/"/g,'')%>
-
-                            </td>
+                            <td><%=elements.Phone%></td>
+                            <input type="hidden" name="Phone" value=<%=elements.Phone%> />
                         </tr>
                         <tr>
                             <td>Address</td>
-                            <td><%=data[9].split(":")[1].replace(/"/g,'')+','+
-                                data[10].replace(/"/g,'')+','+
-                                data[11].replace(/"/g,'')%></td>
+                            <td><%=elements.Address%></td>
+                            <input type="hidden" name="Address" value=<%=(elements.Address).replace(/ /g,'')%> />
+                            <input type="hidden" name="Location" value=<%=elements.Location.coordinates%> />
+                            <input type="hidden" name="transID" value=<%=transID%> />
+
                         </tr>
                     </table>
                 </div>
+                    <div>
+                        <label>What are your goals?</label>
+                        <div class="field">
+                            <input type="checkbox" name="serviceprovided" value="Return to Work" id="rtw"><label for="ph">Return to Work</label>
+
+                            <input type="checkbox" name="serviceprovided" id="hm" value="Preparing Meals" >
+                            <label for="hm">Home Maintenance</label>
+
+                            <input type="checkbox" name="serviceprovided" id="transp" value="Return to Driving" ><label for="transp">Transportation</label>
+
+                            <input type="checkbox" name="serviceprovided" id="meals" value="Walking and Getting Around" ><label for="meals">Meals</label>
+
+                            <input type="checkbox" name="serviceprovided" id="cook" value="Boredom" ><label for="cook">Explore Activities In My Community</label>
+                            <input type="checkbox" name="serviceprovided" id="cook" value="Navigating the System" ><label for="cook">Understand my Financial Options</label>
+                        </div>
+                    </div>
+
 
                 <div class="field half first">
                     <input type="password" name="password" placeholder="Create Password" required />
                 </div>
                 <div class="field half">
                     <input type="password" name="confpass" placeholder="Confirm Password" required/>
-                    <input type="hidden" name="cusid" value= <%=cusID%> />
                 </div>
                 <ul class="actions" style="float:right;">
                     <li><input type="submit" value="Create Profile" class="special" /></li>

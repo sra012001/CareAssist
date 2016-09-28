@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <% include Common/header.ejs %>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyByS-YSGmSQMcxxt-UbRTuZQCBj_UTulnk&libraries=places&callback=initAutocomplete"
+            async defer></script>
+</head>
+<body>
+<!-- Wrapper -->
+<div id="wrapper">
+
+    <!-- Header -->
+    <header id="header">
+        <div class="inner">
+
+            <!-- Logo -->
+            <% include Common/logo.ejs %>
+            <!-- Nav -->
+            <nav>
+                <ul>
+                    <li><a href="#menu">Menu</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+    <!-- Menu -->
+    <% include Common/menu.ejs %>
+
+    <!-- Main -->
+    <div id="main">
+        <div class="inner">
+            <h1>Your Goals</h1>
+            <section>
+                <h2>What would you like to get back to?</h2>
+                <form method="post" action="/goals">
+
+                    <div>
+                        <label>Activities</label>
+                        <div class="field">
+                            <input type="checkbox" name="serviceprovided" value="Personal Hygiene" id="ph" onclick="showRateTableforServices('ratediv',this,'ratetable');">
+                            <label for="ph">Personal Hygiene</label>
+
+                            <input type="checkbox" name="serviceprovided" id="hm" value="Home Maintenance" onclick="showRateTableforServices('ratediv',this,'ratetable');">
+                            <label for="hm">Home Maintenance</label>
+
+                            <input type="checkbox" name="serviceprovided" id="transp" value="Transportation" onclick="showRateTableforServices('ratediv',this,'ratetable');"><label for="transp">Transportation</label>
+
+                            <input type="checkbox" name="serviceprovided" id="meals" value="Meals" onclick="showRateTableforServices('ratediv',this,'ratetable');"><label for="meals">Meals</label>
+
+                            <input type="checkbox" name="serviceprovided" id="cook" value="Cooking" onclick="showRateTableforServices('ratediv',this,'ratetable');"><label for="cook">Cooking</label>
+                        </div>
+
+                    </div>
+
+                    <ul class="actions">
+                        <li><input type="submit" value="Submit" class="special" /></li>
+                    </ul>
+                </form>
+            </section>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <% include Common/footer.ejs %>
+
+</div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/skel.min.js"></script>
+<script src="assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>

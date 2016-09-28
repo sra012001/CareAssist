@@ -5,11 +5,13 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
-
+var expressSession = require('express-session');
+var passport = require('passport');
+var passportLocal = require('passport-local');
 
 var routes = require('./routes/index');
 var provider = require('./routes/provider');
-var dbConn = require('./routes/dbConn');
+var pagesaved = require('./routes/saved');
 var SearchResults = require('./routes/SearchResults');
 var providersearch = require('./routes/providersearch');
 var providerdetails = require('./routes/providerdetails');
@@ -17,6 +19,9 @@ var appointmentdetails = require('./routes/appointmentdetails');
 var sendemail = require('./routes/sendemail');
 var team =  require ('./routes/team');
 var createprofile = require('./routes/createprofile');
+var login = require('./routes/login');
+var validateLogin = require('./routes/validatelogin');
+var goals = require('./routes/goals');
 
 var app = express();
 
@@ -24,6 +29,7 @@ var app = express();
 
 //app.locals.dbURL = 'mongodb://localhost:27017/CareDB';
 app.locals.dbURL = 'mongodb://syedr:deClub60@ds153745.mlab.com:53745/heroku_ks5550z8';
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -36,12 +42,18 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(expressSession({
+  secret: process.env.SESSION_SECRET || 'secret',
+  resave: false,
+  saveUninitialized: false
+}));
 
-
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.use('/', routes);
 app.use('/provider', provider);
-app.use('/dbConn', dbConn);
+app.use('/saved', pagesaved);
 app.use('/SearchResults', SearchResults);
 app.use('/providersearch', providersearch);
 app.use('/providerdetails', providerdetails);
@@ -49,6 +61,9 @@ app.use('/appointmentdetails', appointmentdetails);
 app.use('/sendemail', sendemail);
 app.use('/team', team);
 app.use('/createprofile', createprofile);
+app.use('/login', login);
+app.use('/validatelogin', validateLogin);
+app.use('/goals', goals);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

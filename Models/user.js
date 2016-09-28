@@ -11,13 +11,12 @@ var userSchema = mongoose.Schema({
 
    }
 });
-console.log('invoked');
+//console.log('invoked');
 userSchema.methods.generateHash = function (password) {
     return bcrypt.hashSync(password, bcrypt.genSaltSync(10));
 }
 
-userSchema.methods.validPassword = function (password) {
-    return bcrypt.compareSync(password, this.local.password);
-    
+userSchema.methods.validPassword = function (password,enteredpwd) {
+    return bcrypt.compareSync(enteredpwd, password);
 }
 module.exports = mongoose.model('User', userSchema);

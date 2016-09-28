@@ -12,11 +12,15 @@
     "debug": "~2.2.0",
     "ejs": "~2.3.3",
     "express": "~4.13.1",
+    "express-session": "^1.14.1",
     "mongodb": "^2.1.20",
     "mongoose": "^4.4.19",
     "morgan": "~1.6.1",
     "nodemailer": "^2.5.0",
     "nodemailer-smtp-transport": "^2.6.0",
+    "passport": "^0.3.2",
+    "passport-http": "^0.3.0",
+    "passport-local": "^1.0.0",
     "serve-favicon": "~2.3.0"
   },
   "devDependencies": {

@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <% include Common/header.ejs %>
+</head>
+<body>
+<!-- Wrapper -->
+<div id="wrapper">
+
+    <!-- Header -->
+    <header id="header">
+        <div class="inner">
+
+            <!-- Logo -->
+            <% include Common/logo.ejs %>
+            <nav>
+                <ul>
+                    <li><a href="#menu">Menu</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+    <!-- Menu -->
+    <% include Common/menu.ejs %>
+    <!-- Main -->
+    <div id="main">
+        <div class="inner">
+
+
+
+            <section>
+                <form method="post" action="validatelogin">
+                    <div style="width: 80%;margin: auto;">
+                        <h1>Login</h1>
+                        <% if (!isAuthenticated) {%>
+                    <div style="color: red">Incorrect Email or Password</div>
+                        <% } %>
+                <div class="field">
+                    <input type="text" name = "email" placeholder="Enter your Email" />
+                </div>
+                <div class="field">
+                    <input type="password" name = "password" placeholder="Enter your Password" />
+                </div>
+                        <ul class="actions vertical">
+                            <li><input type="submit" class="button special fit" value="Login"></li>
+                        </ul>
+                    </div>
+                </form>
+
+            </section>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <% include Common/footer.ejs %>
+
+</div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/skel.min.js"></script>
+<script src="assets/js/util.js"></script>
+<!--[if lte IE 8]>
+<script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>

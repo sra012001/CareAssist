@@ -6,7 +6,8 @@ var mongodb = require('mongodb');
 //Use "MongoClient" interface in order to connect to a mongodb server.
 var MongoClient = mongodb.MongoClient;
 // Connection URL. This is where your mongodb server is running.
-var url = 'mongodb://localhost:27017/CareDB';
+//var url = 'mongodb://localhost:27017/CareDB';
+var url = 'mongodb://syedr:deClub60@ds153745.mlab.com:53745/heroku_ks5550z8';
 module.exports = {
   connectDB: function (collectionName, condition, crudOp, callback) {
       MongoClient.connect(url, function (err, db) {

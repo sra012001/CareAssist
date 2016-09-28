@@ -1,122 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c51de968-dd22-4fe0-843c-1cdc9628f38e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Models/dbConnection.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/routes/goals.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/routes/login.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/routes/saved.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/routes/validatelogin.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/error codes" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/goals.ejs" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/login.ejs" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/body-parser/node_modules/http-errors/node_modules/inherits/test.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/npm-debug.log" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/routes/dbConn.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/html/LICENSE.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/html/README.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/html/assets/css/font-awesome.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/html/assets/css/ie8.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/html/assets/css/ie9.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/html/assets/css/main.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/html/assets/fonts/FontAwesome.otf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/html/assets/fonts/fontawesome-webfont.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/html/assets/fonts/fontawesome-webfont.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/html/assets/fonts/fontawesome-webfont.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/html/assets/fonts/fontawesome-webfont.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/html/assets/fonts/fontawesome-webfont.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/html/assets/js/ie/html5shiv.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/html/assets/js/ie/respond.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/html/assets/js/jquery.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/html/assets/js/local.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/html/assets/js/main.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/html/assets/js/skel.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/html/assets/js/util.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/html/assets/sass/base/_page.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/html/assets/sass/base/_typography.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/html/assets/sass/components/_box.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/html/assets/sass/components/_button.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/html/assets/sass/components/_form.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/html/assets/sass/components/_icon.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/html/assets/sass/components/_image.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/html/assets/sass/components/_list.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/html/assets/sass/components/_section.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/html/assets/sass/components/_table.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/html/assets/sass/components/_tiles.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/html/assets/sass/ie8.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/html/assets/sass/ie9.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/html/assets/sass/layout/_footer.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/html/assets/sass/layout/_header.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/html/assets/sass/layout/_main.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/html/assets/sass/layout/_menu.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/html/assets/sass/layout/_wrapper.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/html/assets/sass/libs/_functions.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/html/assets/sass/libs/_mixins.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/html/assets/sass/libs/_skel.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/html/assets/sass/libs/_vars.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/html/assets/sass/main.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/html/cgs.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/html/elements.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/html/faq.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/html/hm.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/html/images/delete.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/html/images/faq.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/html/images/logo.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/html/images/md.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/html/images/pic01.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/html/images/pic02.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/html/images/pic03.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/html/images/pic04.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/html/images/pic05.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/html/images/pic06.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/html/images/pic07.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/html/images/pic08.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/html/images/pic09.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/html/images/pic10.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/html/images/pic11.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/html/images/pic12.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/html/images/pic13.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/html/images/pic14.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/html/images/pic15.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/html/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/html/md.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/html/ph.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/html/provider.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/html/trans.html" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Models/user.js" afterPath="$PROJECT_DIR$/Models/user.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/body-parser/node_modules/bytes/package.json" afterPath="$PROJECT_DIR$/node_modules/body-parser/node_modules/bytes/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/body-parser/node_modules/http-errors/node_modules/inherits/inherits.js" afterPath="$PROJECT_DIR$/node_modules/body-parser/node_modules/http-errors/node_modules/inherits/inherits.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/body-parser/node_modules/http-errors/node_modules/inherits/package.json" afterPath="$PROJECT_DIR$/node_modules/body-parser/node_modules/http-errors/node_modules/inherits/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/body-parser/node_modules/iconv-lite/package.json" afterPath="$PROJECT_DIR$/node_modules/body-parser/node_modules/iconv-lite/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/body-parser/node_modules/qs/package.json" afterPath="$PROJECT_DIR$/node_modules/body-parser/node_modules/qs/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/body-parser/node_modules/raw-body/HISTORY.md" afterPath="$PROJECT_DIR$/node_modules/body-parser/node_modules/raw-body/HISTORY.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/body-parser/node_modules/raw-body/LICENSE" afterPath="$PROJECT_DIR$/node_modules/body-parser/node_modules/raw-body/LICENSE" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/body-parser/node_modules/raw-body/README.md" afterPath="$PROJECT_DIR$/node_modules/body-parser/node_modules/raw-body/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/body-parser/node_modules/raw-body/index.js" afterPath="$PROJECT_DIR$/node_modules/body-parser/node_modules/raw-body/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/body-parser/node_modules/raw-body/node_modules/bytes/History.md" afterPath="$PROJECT_DIR$/node_modules/body-parser/node_modules/raw-body/node_modules/bytes/History.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/body-parser/node_modules/raw-body/node_modules/bytes/Readme.md" afterPath="$PROJECT_DIR$/node_modules/body-parser/node_modules/raw-body/node_modules/bytes/Readme.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/body-parser/node_modules/raw-body/node_modules/bytes/index.js" afterPath="$PROJECT_DIR$/node_modules/body-parser/node_modules/raw-body/node_modules/bytes/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/body-parser/node_modules/raw-body/node_modules/bytes/package.json" afterPath="$PROJECT_DIR$/node_modules/body-parser/node_modules/raw-body/node_modules/bytes/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/body-parser/node_modules/raw-body/package.json" afterPath="$PROJECT_DIR$/node_modules/body-parser/node_modules/raw-body/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/body-parser/node_modules/type-is/node_modules/mime-types/HISTORY.md" afterPath="$PROJECT_DIR$/node_modules/body-parser/node_modules/type-is/node_modules/mime-types/HISTORY.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/body-parser/node_modules/type-is/node_modules/mime-types/index.js" afterPath="$PROJECT_DIR$/node_modules/body-parser/node_modules/type-is/node_modules/mime-types/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/body-parser/node_modules/type-is/node_modules/mime-types/node_modules/mime-db/HISTORY.md" afterPath="$PROJECT_DIR$/node_modules/body-parser/node_modules/type-is/node_modules/mime-types/node_modules/mime-db/HISTORY.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/body-parser/node_modules/type-is/node_modules/mime-types/node_modules/mime-db/db.json" afterPath="$PROJECT_DIR$/node_modules/body-parser/node_modules/type-is/node_modules/mime-types/node_modules/mime-db/db.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/body-parser/node_modules/type-is/node_modules/mime-types/node_modules/mime-db/package.json" afterPath="$PROJECT_DIR$/node_modules/body-parser/node_modules/type-is/node_modules/mime-types/node_modules/mime-db/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/body-parser/node_modules/type-is/node_modules/mime-types/package.json" afterPath="$PROJECT_DIR$/node_modules/body-parser/node_modules/type-is/node_modules/mime-types/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/SearchResults.js" afterPath="$PROJECT_DIR$/routes/SearchResults.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/createprofile.js" afterPath="$PROJECT_DIR$/routes/createprofile.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/providerdetails.js" afterPath="$PROJECT_DIR$/routes/providerdetails.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/sendemail.js" afterPath="$PROJECT_DIR$/routes/sendemail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/Common/footer.ejs" afterPath="$PROJECT_DIR$/views/Common/footer.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/Common/menu.ejs" afterPath="$PROJECT_DIR$/views/Common/menu.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/confirmation.ejs" afterPath="$PROJECT_DIR$/views/confirmation.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/provider.ejs" afterPath="$PROJECT_DIR$/views/provider.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/scratch" afterPath="$PROJECT_DIR$/views/scratch" />
-    </list>
+    <list default="true" id="c51de968-dd22-4fe0-843c-1cdc9628f38e" name="Default" comment="" />
     <ignored path="CareAssist.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -798,12 +683,12 @@
       <workItem from="1472358709566" duration="14387000" />
       <workItem from="1472776876431" duration="28247000" />
       <workItem from="1474657742964" duration="13936000" />
-      <workItem from="1474746910630" duration="9390000" />
+      <workItem from="1474746910630" duration="9466000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="279115000" />
+    <option name="totallyTimeSpent" value="279191000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -827,7 +712,7 @@
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21746293" sideWeight="0.54545456" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3279483" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30756843" sideWeight="0.4827018" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13756178" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13756178" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39291465" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
